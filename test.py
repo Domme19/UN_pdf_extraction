@@ -1,6 +1,13 @@
+'''author: Dieuveille Mabounda 
+   done: 3/11/2022
+   description: script that extracts the entire united nations(anti terrorirsm 
+   measures) pdf file and puts the data into a excel file'''
+
+
 import fitz
 import re
 import pandas as pd
+import numpy as np
 
 
 
@@ -25,7 +32,7 @@ def find_record(text, dic, cols):
         b = cols[end]
         match = re.findall(f"{a}" + r"(.*?)" + f"{b}", text)
         if len(match) == 0:
-            dic[b].append('na')
+            dic[b].append(np.nan)
             continue
         elif len(match) != 0:
             dic[a].append(match[0])
@@ -90,7 +97,7 @@ def execute():
     final_df = pd.concat([refs_df, record_df], axis=1)
 
     # create the excel file
-    # final_df.to_excel('full_record.xlsx')
+    final_df.to_excel('best_record.xlsx')
 
 
 # runs execute function
