@@ -1,0 +1,30 @@
+ # another test
+# start = 0
+# special = "Name (original script):"
+# found_text = ""
+# found_record = []
+# record = {}
+# for k in range(1, len(cols)):
+#     a = cols[start]
+#     b = cols[k]
+
+
+#     if b not in trimmed_text:
+#         continue
+#     if b in trimmed_text and b == special:
+#         n_value = "Name \(original script\):"
+#         b = n_value
+#         cols[k] = n_value
+    
+#     found_text = re.findall(f"{a}" + r"(.*?)" + f"{b}", trimmed_text)
+#     found_record.append(found_text[0])
+#     record[a] = found_text[0]
+#     start = k
+
+# last_found = re.findall(f"{cols[len(cols) - 1]}" + r'(.*)', trimmed_text)
+# found_record.append(last_found[0])
+# record[cols[len(cols) - 1]] = last_found[0]
+
+# df = pd.DataFrame(record, index=[0])
+# df.to_excel('record.xlsx')
+# print(df)
